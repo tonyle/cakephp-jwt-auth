@@ -1,7 +1,7 @@
 <?php
-namespace ADmad\JwtAuth\Auth\Test\TestCase\Auth;
+namespace JwtAuth\Auth\Test\TestCase\Auth;
 
-use ADmad\JwtAuth\Auth\JwtAuthenticate;
+use JwtAuth\Auth\JwtAuthenticate;
 use Cake\Controller\Component\AuthComponent;
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
@@ -19,8 +19,8 @@ use JWT;
 class JwtAuthenticateTest extends TestCase
 {
     public $fixtures = [
-        'plugin.ADmad\JwtAuth.users',
-        'plugin.ADmad\JwtAuth.groups',
+        'plugin.JwtAuth.users',
+        'plugin.JwtAuth.groups',
     ];
 
     /**

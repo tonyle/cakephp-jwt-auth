@@ -25,7 +25,7 @@ In your app's `config/bootstrap.php` add:
 
 ```php
 // In config/bootstrap.php
-Plugin::load('ADmad/JwtAuth');
+Plugin::load('JwtAuth');
 ```
 
 ## Configuration:
@@ -37,7 +37,7 @@ Setup the authentication class settings:
     public $components = [
         'Auth' => [
             'authenticate' => [
-                'ADmad/JwtAuth.Jwt' => [
+                'JwtAuth.Jwt' => [
                     'parameter' => '_token',
                     'userModel' => 'Users',
                     'scope' => ['Users.active' => 1],
@@ -51,7 +51,7 @@ Setup the authentication class settings:
 
     // Or in AppController::beforeFilter()
     $this->Auth->config('authenticate', [
-        'ADmad/JwtAuth.Jwt' => [
+        'JwtAuth.Jwt' => [
             'parameter' => '_token',
             'userModel' => 'Users',
             'scope' => ['Users.active' => 1],

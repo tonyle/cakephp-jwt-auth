@@ -1,5 +1,5 @@
 <?php
-namespace ADmad\JwtAuth\Auth;
+namespace JwtAuth\Auth;
 
 use Cake\Auth\BaseAuthenticate;
 use Cake\Controller\ComponentRegistry;
@@ -16,7 +16,7 @@ use JWT;
  *
  * {{{
  *  $this->Auth->config('authenticate', [
- *      'ADmad/JwtAuth.Jwt' => [
+ *      'JwtAuth.Jwt' => [
  *          'parameter' => '_token',
  *          'userModel' => 'Users',
  *          'scope' => ['User.active' => 1]
@@ -139,6 +139,7 @@ class JwtAuthenticate extends BaseAuthenticate
      * @param string $token The token identifier.
      * @param string $password Unused password.
      * @return bool|array Either false on failure, or an array of user data.
+     * @throws \Exception
      */
     protected function _findUser($token, $password = null)
     {
@@ -161,7 +162,12 @@ class JwtAuthenticate extends BaseAuthenticate
         $fields = $this->_config['fields'];
 
         $table = TableRegistry::get($this->_config['userModel']);
-        $conditions = [$table->aliasField($fields['id']) => $token->id];
+        foreach($fields as $alias => $field) {
+            if(isset($token->$alias)) {
+                $conditions[$table->aliasField($field)] = $token->$alias;
+            }
+        }
+
         if (!empty($this->_config['scope'])) {
             $conditions = array_merge($conditions, $this->_config['scope']);
         }

@@ -1,5 +1,5 @@
 <?php
-namespace ADmad\JwtAuth\Test\Fixture;
+namespace JwtAuth\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
 
