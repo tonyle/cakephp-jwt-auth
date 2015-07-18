@@ -1,5 +1,5 @@
 {
-    "name": "vutung2311/cakephp-jwt-auth",
+    "name": "tonyle/cakephp-jwt-auth",
     "type": "cakephp-plugin",
     "description": "CakePHP plugin for authenticating using JSON Web Tokens",
     "keywords":[
@@ -8,18 +8,18 @@
         "authentication",
         "jwt"
     ],
-    "homepage": "http://github.com/vutung2311/cakephp-jwt-auth",
+    "homepage": "http://github.com/tonyle/cakephp-jwt-auth",
     "authors": [
         {
-            "name":"Tung Vu",
+            "name":"Tonyle",
             "role":"Author",
-            "homepage":"https://github.com/vutung2311"
+            "homepage":"https://github.com/tonyle"
         }
     ],
     "license": "MIT",
     "support": {
-        "source":"https://github.com/vutung2311/cakephp-jwt-auth",
-        "issues":"https://github.com/vutung2311/cakephp-jwt-auth/issues"
+        "source":"https://github.com/tonyle/cakephp-jwt-auth",
+        "issues":"https://github.com/tonyle/cakephp-jwt-auth/issues"
     },
     "require": {
         "cakephp/cakephp": "~3.0",
